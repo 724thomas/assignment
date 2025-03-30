@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: assignment_db_container
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: assignment_root_password
+      MYSQL_DATABASE: assignment_db
+      MYSQL_USER: assignment_user
+      MYSQL_PASSWORD: assignment_password
+
+volumes:
+  mysql_data:
+  redis_data:
